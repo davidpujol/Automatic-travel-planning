@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Skyscanner.iml" filepath="$PROJECT_DIR$/.idea/Skyscanner.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/HackUPC.iml" filepath="$PROJECT_DIR$/.idea/HackUPC.iml" />
+>>>>>>> origin/master
     </modules>
   </component>
 </project>
