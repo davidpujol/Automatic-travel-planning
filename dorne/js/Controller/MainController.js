@@ -7,6 +7,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 0,
             minimum_days: 1,
             coord:[44.644914, 10.924647],
+            url: "../../img/roma.jpg",
         llocs: [
             {
                 namePlace: "Osteria Francescana",
@@ -47,6 +48,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 1,
             minimum_days: 2,
             coord:[40.849681, 14.258449],
+            url:"../../img/roma.jpg" ,
             llocs: [
                 {
                     namePlace: "National Archeologic Museum",
@@ -118,6 +120,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 1,
             minimum_days: 1,
             coord:[43.718279, 10.399849],
+            url:"../../img/roma.jpg" ,
             llocs: [
                 {
                     namePlace: "Leaning Tower of Pisa",
@@ -149,6 +152,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 0,
             minimum_days: 1,
             coord:[44.128155, 9.712376],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Monterosso al Mare",
@@ -181,6 +185,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 0,
             minimum_days: 1,
             coord:[46.013656, 9.255889],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Villa Carlotta",
@@ -211,6 +216,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 1,
             minimum_days: 2,
             coord:[37.653311, 15.068013],
+            url:"../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Taormina",
@@ -242,6 +248,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 0,
             minimum_days: 1,
             coord:[43.321368, 11.327481],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Piazza del Campo",
@@ -269,6 +276,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 0,
             minimum_days: 1,
             coord:[40.783291, 17.237401],
+            url:"../../img/roma.jpg" ,
             llocs: [
                 {
                     namePlace: "Trullo Sovrano",
@@ -297,6 +305,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 0 ,
             minimum_days: 2,
             coord:[40.554319, 14.222905],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Blue Grotto",
@@ -324,6 +333,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 0,
             minimum_days: 1,
             coord:[40.633567, 14.602983],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Villa Rufolo",
@@ -351,6 +361,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 1,
             minimum_days: 2,
             coord:[40.184645, 9.052776],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Cagliari",
@@ -381,6 +392,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 1,
             minimum_days: 2,
             coord:[45.063743, 7.682117],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Mole Antonelliana",
@@ -439,6 +451,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 1,
             minimum_days: 1,
             coord:[44.406704, 8.930931],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Aquarium of Genova",
@@ -477,6 +490,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 1,
             minimum_days: 1,
             coord:[44.498090, 11.340955],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Piazza Maggiore",
@@ -512,6 +526,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 1,
             minimum_days: 2,
             coord:[45.468461, 9.191475],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Lake Garda",
@@ -598,10 +613,11 @@ app.controller('MainController', ['$scope', function($scope) {
         {
             name: "Rome",
             puntuacio: 5,
-            situacio: 'N/S',
+            situacio: 'S',
             aeroport: 1,
             minimum_days: 3,
             coord: [41.896150, 12.489281],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace:"Galleria Borghese",
@@ -685,6 +701,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 1,
             minimum_days: 2,
             coord:[45.437853, 12.329287],
+            url:"../../img/roma.jpg" ,
             llocs: [
                 {
                     namePlace: "Piazza San Marco",
@@ -737,6 +754,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 1 ,
             minimum_days: 2,
             coord:[43.772504, 11.257957],
+            url: "../../img/roma.jpg",
             llocs: [
                 {
                     namePlace: "Uffizi Gallery",
@@ -792,6 +810,7 @@ app.controller('MainController', ['$scope', function($scope) {
             aeroport: 1,
             minimum_days: 1,
             coord: [45.435012, 10.988703],
+            url:"../../img/roma.jpg" ,
             llocs: [
                 {
                     namePlace: "Lake Garda",
