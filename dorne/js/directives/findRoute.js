@@ -116,7 +116,12 @@ app.directive ('findRoute', function (){
             }
 
 
-            var findDistance = function(lat1, lon1, lat2, lon2) {
+            var findDistance = function(coord1, coord2) {
+                var lat1 = coord1[0];
+                var lat2 = coord2[0];
+                var lon1 = coord1[1];
+                var lon2 = coord2[1];
+
                 var R = 6371e3; // metres
                 var l1 = convertRadians(lat1);
                 var l2 = convertRadians(lat2);
@@ -127,16 +132,41 @@ app.directive ('findRoute', function (){
                     Math.cos(l1) * Math.cos(l2) *
                     Math.sin(difLon / 2) * Math.sin(difLon / 2);
                 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-                var d = R * c;
+                var d = (R * c)/1000;
 
                 return d;
             }
+
+
+            //Inicialize map with every element and it's punctuation
+            var allElements = scope.cities.reduce (function (map, city) {
+                map[city.name] = city.coord;
+                return map;
+            }, {});
+
+
+
+            var calculaMitjana = function() {
+                var total = 0;
+                var elements = 0;
+                for (var key of Object.keys(allElements)){
+                    for (var key2 of Object.keys(allElements)) {
+                        total += findDistance(allElements[key], allElements[key2]);
+                        elements += 1;
+                    }
+                }
+
+                return total/elements;
+            }
+
 
             var calculateAdjacent  = function(city)
             {
                 var arr = [];
                 var result = scope.cities.reduce (function (adjArray, city_aux) {
-                    if (city_aux.name !== city.name) arr.push(city_aux.name);
+                    var dist = findDistance(city.coord, city_aux.coord);
+
+                    if (city_aux.name !== city.name && dist<calculaMitjana()) arr.push(city_aux.name);
 
                     return adjArray;
                 }, {});
@@ -145,79 +175,74 @@ app.directive ('findRoute', function (){
             };
 
 
-            //Inicialize map
-            var adjecencyList = scope.cities.reduce (function (map, city) {
-                map[city.name] = [city.puntuacio, calculateAdjacent(city)];
+            //Inicialize map for cities in all the country
+            var adjecencyListTotal = scope.cities.reduce (function (map, city) {
+                map[city.name] = [city.puntuacio, calculateAdjacent(city), city.coord, city.situacio];
+                return map;
+            }, {});
+
+            //Inicialize map for cities in the north
+            var adjecencyListNord = scope.cities.reduce (function (map, city) {
+                if (city.situacio === 'N') map[city.name] = [city.puntuacio, calculateAdjacent(city), city.coord, city.situacio];
+                return map;
+            }, {});
+
+
+            //Inicialize map for cities in the south
+            var adjecencyListSud = scope.cities.reduce (function (map, city) {
+                if (city.situacio === 'S') map[city.name] = [city.puntuacio, calculateAdjacent(city), city.coord, city.situacio];
                 return map;
             }, {});
 
 
 
-            var algorithm = function(graph, startVertex) {
-            var distances = {};
-            var visitedVertices = {};
-            var previousVertices = {};
-            var queue = new PriorityQueue();
 
-            // Init all distances with infinity assuming that currently we can't reach
-            // any of the vertices except start one.
-
-            for (var key of Object.keys(graph)){
-                distances[key] = Infinity;
-                previousVertices[key] = null;
-                visitedVertices[key] = false;
-            }
-
-            distances[startVertex] = 0;
-
-            // Init vertices queue.
-            queue.enqueue(startVertex, distances[startVertex]);
-
-            while (!queue.isEmpty()) {
-                var currentVertex = queue.front().element;
-                queue.dequeue();
-                visitedVertices[currentVertex] = true;
-                console.log(currentVertex);
+         var findQueue = function (graph, visitedVertices, currentVertex) {
+                var queue = new PriorityQueue();
 
                 for (var neighbor of graph[currentVertex][1]) {
-                    // Don't visit already visited vertices.
+                // Don't visit already visited vertices.
 
                     if (!visitedVertices[neighbor]) {
-                        console.log("node adjacent: " + neighbor);
-                        // Update distances to every neighbor from current vertex
                         let weight = graph[neighbor][0];
-                        var existingDistanceToNeighbor = distances[neighbor];
-                        var distanceToNeighborFromCurrent = distances[currentVertex] - weight;
-
-                        console.log("previous distance:" + existingDistanceToNeighbor + "   new distance: " + distanceToNeighborFromCurrent);
-                        if (distanceToNeighborFromCurrent < existingDistanceToNeighbor) {
-                            distances[neighbor] = distanceToNeighborFromCurrent;
-
-                            // Remember previous vertex.
-                            previousVertices[neighbor] = currentVertex;
-
-
-                        }
-
-                        queue = queue.isInQueue(neighbor);  //retorna la cua sense el element neighbor
-                        queue.enqueue(neighbor, distances[neighbor]);
-
+                        var total_weight = (findDistance(graph[currentVertex][2], graph[neighbor][2])/2) - weight;
+                        console.log(total_weight);
+                        queue.enqueue(neighbor, total_weight);
                     }
                 }
-
-                // Add current vertex to visited ones.
-
-            }
-
-            return {
-                distances,
-                previousVertices,
-            };
+                return queue;
         }
 
-        console.log(algorithm(adjecencyList, "Rome"))
 
 
+
+
+
+        //startVertex is a string that represents the starting node
+            var findRoute = function (graph, startVertex) {
+                var ruta = [];
+                var visitedVertices = {};
+
+                for (var key of Object.keys(graph)){
+                    visitedVertices[key] = false;
+                }
+
+                ruta.push(startVertex);
+                visitedVertices[startVertex] = true;
+
+                var p = findQueue (graph, visitedVertices, startVertex);    //queue of the elements adjacents to him and not visited
+
+                while (! p.isEmpty()) {
+                    var currentVertex = p.front().element;
+                    ruta.push(currentVertex);
+                    p = findQueue (graph, visitedVertices, currentVertex);
+                    visitedVertices[currentVertex] = true;
+                }
+
+
+                return ruta;
+
+            }
 
 
 
