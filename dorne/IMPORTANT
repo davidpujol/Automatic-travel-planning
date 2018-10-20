@@ -1,0 +1,9 @@
+FALTA:
+
+-implementar html findRoute.html per mostrar resultats de l'algorisme, usant la directiva showCity que mostri una sola ciutat amb el seu nom i numero de dies (SECCIO 3)
+-implementar html de index.html per triar tipus de ruta per regio (SECCIO 2), opcions d'interes (SECCIO 1)
+-modificar algorisme per modificar la ruta segons interessos
+-mostrar ruta default, ruta personalitzada i intermitges. Mostrar les rutes encongides, i poder expandirles clicant-hi sobre (quedant en format SECCIO 3)
+-implementar API SkyScanner.
+
+
