@@ -1,9 +1,11 @@
 app.controller('MainController', ['$scope', function($scope) {
-    $scope.paraula = "hola";
     $scope.cities = [
         {
         name: "Modena"  ,
-        puntuacio: 57,
+        puntuacio: 43,
+            situacio: 'N',
+            aeroport: 0,
+            minimum_days: 1,
         llocs: [
             {
                 namePlace: "Osteria Francescana",
@@ -39,7 +41,10 @@ app.controller('MainController', ['$scope', function($scope) {
     },
         {
             name: "Napols",
-            puntuacio: 66,
+            puntuacio: 34,
+            situacio: 'S',
+            aeroport: 1,
+            minimum_days: 2,
             llocs: [
                 {
                     namePlace: "National Archeologic Museum",
@@ -106,7 +111,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Pisa",
-            puntuacio: 60,
+            puntuacio: 40,
+            situacio: 'N',
+            aeroport: 1,
+            minimum_days: 1,
             llocs: [
                 {
                     namePlace: "Leaning Tower of Pisa",
@@ -133,7 +141,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Cinque Terre",
-            puntuacio: 85,
+            puntuacio: 15,
+            situacio: 'S',
+            aeroport: 0,
+            minimum_days: 1,
             llocs: [
                 {
                     namePlace: "Monterosso al Mare",
@@ -161,7 +172,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Lago Como",
-            puntuacio: 83,
+            puntuacio: 17,
+            situacio: 'S',
+            aeroport: 0,
+            minimum_days: 1,
             llocs: [
                 {
                     namePlace: "Villa Carlotta",
@@ -187,7 +201,10 @@ app.controller('MainController', ['$scope', function($scope) {
         },
         {
             name: "Sicilia",
-            puntuacio: 80,
+            puntuacio: 20,
+            situacio: 'S',
+            aeroport: 1,
+            minimum_days: 2,
             llocs: [
                 {
                     namePlace: "Taormina",
@@ -214,7 +231,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Siena",
-            puntuacio: 70,
+            puntuacio: 30,
+            situacio: 'N',
+            aeroport: 0,
+            minimum_days: 1,
             llocs: [
                 {
                     namePlace: "Piazza del Campo",
@@ -237,7 +257,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Alberobello",
-            puntuacio: 70,
+            puntuacio: 30,
+            situacio: 'S',
+            aeroport: 0,
+            minimum_days: 1,
             llocs: [
                 {
                     namePlace: "Trullo Sovrano",
@@ -261,7 +284,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Capri",
-            puntuacio: 80,
+            puntuacio: 20,
+            situacio: 'S',
+            aeroport: 0 ,
+            minimum_days: 2,
             llocs: [
                 {
                     namePlace: "Blue Grotto",
@@ -284,7 +310,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Costa Amalfitana",
-            puntuacio: 80,
+            puntuacio: 20,
+            situacio: 'S',
+            aeroport: 0,
+            minimum_days: 1,
             llocs: [
                 {
                     namePlace: "Villa Rufolo",
@@ -307,7 +336,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Cerdeña",
-            puntuacio: 85,
+            puntuacio: 15,
+            situacio: 'S',
+            aeroport: 1,
+            minimum_days: 2,
             llocs: [
                 {
                     namePlace: "Cagliari",
@@ -333,7 +365,10 @@ app.controller('MainController', ['$scope', function($scope) {
         },
         {
             name: "Turin",
-            puntuacio: 80,
+            puntuacio: 20,
+            situacio: 'N',
+            aeroport: 1,
+            minimum_days: 2,
             llocs: [
                 {
                     namePlace: "Mole Antonelliana",
@@ -387,7 +422,10 @@ app.controller('MainController', ['$scope', function($scope) {
         },
         {
             name: "Genova",
-            puntuacio: 70,
+            puntuacio: 30,
+            situacio: 'N',
+            aeroport: 1,
+            minimum_days: 1,
             llocs: [
                 {
                     namePlace: "Aquarium of Genova",
@@ -421,7 +459,10 @@ app.controller('MainController', ['$scope', function($scope) {
         },
         {
             name: "Bologna",
-            puntuacio: 75,
+            puntuacio: 25,
+            situacio: 'N',
+            aeroport: 1,
+            minimum_days: 1,
             llocs: [
                 {
                     namePlace: "Piazza Maggiore",
@@ -452,7 +493,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Milan",
-            puntuacio: 90 ,
+            puntuacio: 20 ,
+            situacio: 'N',
+            aeroport: 1,
+            minimum_days: 2,
             llocs: [
                 {
                     namePlace: "Lake Garda",
@@ -538,7 +582,10 @@ app.controller('MainController', ['$scope', function($scope) {
         },
         {
             name: "Rome",
-            puntuacio: 95,
+            puntuacio: 5,
+            situacio: 'N/S',
+            aeroport: 1,
+            minimum_days: 3,
             llocs: [
                 {
                     namePlace:"Galleria Borghese",
@@ -617,7 +664,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Venice",
-            puntuacio: 90,
+            puntuacio: 10,
+            situacio: 'N',
+            aeroport: 1,
+            minimum_days: 2,
             llocs: [
                 {
                     namePlace: "Piazza San Marco",
@@ -665,7 +715,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Florencia",
-            puntuacio: 90,
+            puntuacio: 10,
+            situacio: 'N',
+            aeroport: 1 ,
+            minimum_days: 2,
             llocs: [
                 {
                     namePlace: "Uffizi Gallery",
@@ -716,7 +769,10 @@ app.controller('MainController', ['$scope', function($scope) {
 
         {
             name: "Verona",
-            puntuacio: 60,
+            puntuacio: 40,
+            situacio: 'N',
+            aeroport: 1,
+            minimum_days: 1,
             llocs: [
                 {
                     namePlace: "Lake Garda",
