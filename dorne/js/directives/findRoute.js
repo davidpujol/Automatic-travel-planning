@@ -97,8 +97,6 @@ class PriorityQueue {
 
 
 app.directive ('findRoute', function (){
-
-
     return {
         restrict: 'E',
         scope: {
@@ -108,8 +106,8 @@ app.directive ('findRoute', function (){
         },
         templateUrl: 'js/directives/findRoute.html',
 
-        link: function (scope, element, prop) {
 
+        link: function (scope, element, prop) {
             var convertRadians = function (value) {
                 return value * Math.PI / 180;
             }
@@ -253,11 +251,13 @@ app.directive ('findRoute', function (){
 
 
             var findRoute = function () {
-                if (scope.region === 'N') console.log((algorithm(adjecencyListNord, "Turin", scope.numberOfDays)));
-                if (scope.region === 'S') console.log((algorithm(adjecencyListSud, "Rome", scope.numberOfDays)));
-                else console.log((algorithm(adjecencyListTotal, "Turin", scope.numberOfDays)));
-            }
+                var a = [];
+                if (scope.region === 'N') a = algorithm(adjecencyListNord, "Turin", scope.numberOfDays);
+                if (scope.region === 'S') a = algorithm(adjecencyListSud, "Rome", scope.numberOfDays);
+                else a = algorithm(adjecencyListTotal, "Turin", scope.numberOfDays);
 
+                document.getElementById("nameCity").innerHTML = "hi";
+            }
             findRoute();
 
         }
