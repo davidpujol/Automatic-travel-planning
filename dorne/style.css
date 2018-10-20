@@ -133,7 +133,7 @@ p {
 
 .section-padding-0-100 {
     padding-top: 0;
-    padding-bottom: 100px;
+    padding-bottom: 15px;
 }
 
 img {
@@ -514,6 +514,12 @@ li {
 .dropdown-item:hover {
     background-color: #7643ea;
     color: #fff;
+}
+
+.imatge{
+    width: 100px;
+    highth: 100px;
+
 }
 
 .dropdown-toggle:after {
