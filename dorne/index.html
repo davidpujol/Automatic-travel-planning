@@ -15,11 +15,11 @@
     <link rel="icon" href="img/logo.png">
 
     <!-- Core Stylesheet -->
-    <link href="style.css" rel="stylesheet">
+
 
     <!-- Responsive CSS -->
     <link href="css/responsive/responsive.css" rel="stylesheet">
-
+    <link href="style.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
 
@@ -106,7 +106,7 @@
     <!-- ***** Welcome Area Start ***** -->
 
 
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/vatica.jpg);">
+    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url(img/roma.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12 col-md-10">
@@ -122,34 +122,37 @@
                             <div class="tab-pane fade show active" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
                                 <h6>What are you looking for?</h6>
                                 <form action="#" method="get">
-                                    <select class="custom-select">
-                                        <option selected> City of origin </option>
-                                        <option value="1">Madrid </option>
-                                        <option value="2">Barcelona </option>
-                                        <option value="3">Paris</option>
-                                        <option value="4">Berlin</option>
-                                        <option value="5">London</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected> Country</option>
-                                        <option value="1">Italy </option>
-                                        <option value="2">Spain </option>
-                                        <option value="3">France </option>
-                                        <option value="4">Germany </option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected> Number of travelers</option>
-                                        <option value="1">1 </option>
-                                        <option value="2">2 </option>
-                                        <option value="3">3 </option>
-                                        <option value="1">4 </option>
-                                        <option value="1">5 </option>
-                                        <option value="1">6 </option>
-                                    </select>
-                                    <input class="custom-select">
-                                    <input class="custom-select">
+                                    <div class="inputs">
 
-                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
+                                        <input id="origin" class = "custom-select" value="Origin" onclick="value='';">
+                                    </div>
+                                    <div class="inputs">
+
+                                        <input id = "destiny" class ="custom-select" value="Destiny" onclick="value='';">
+                                    </div>
+                                    <div class="inputs">
+
+                                        <select class="seleccio">
+                                            <option selected>Nº</option>
+                                            <option value="1">1 </option>
+                                            <option value="2">2 </option>
+                                            <option value="3">3 </option>
+                                            <option value="1">4 </option>
+                                            <option value="1">5 </option>
+                                            <option value="1">6 </option>
+                                        </select>
+                                    </div>
+                                    <div class="inputs">
+
+                                        <input id="dataini" class="custom-select" value="Data Ini" onclick="value='';">
+                                    </div>
+                                    <div class="inputs">
+
+                                        <input id="datafi" class="custom-select" value="Data Fi" onclick="value='';">
+                                    </div>
+                                    <div class = "inputs">
+                                        <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
